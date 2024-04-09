@@ -1,0 +1,281 @@
+/**
+
+* Dark Mode Styles
+
+* This section defines the color variables for both light and dark modes,
+
+* which are applied to various elements based on the presence of the
+
+* 'dark-mode' class on the body element.
+
+*/
+
+:root {
+
+--bg-color: #F5F5DC;
+
+--text-color: #1a1a1a;
+
+--comment-color: #006400;
+
+--border-color: #1a1a1a;
+
+--link-color: #0077cc;
+
+--link-highlight-color: #005599;
+
+--section-header-border-color: #1a1a1a; /* Added this line */
+
+}
+
+.dark-mode {
+
+--bg-color: #1a1a1a;
+
+--text-color: #F5F5DC;
+
+--comment-color: #90ee90;
+
+--border-color: #F5F5DC;
+
+--link-color: #00bfff;
+
+--link-highlight-color: #00a0e0;
+
+--section-header-border-color: #F5F5DC; /* Added this line */
+
+}
+
+/**
+
+* Base Styles
+
+* This section defines the base styles for the website, including fonts,
+
+* colors, and layout.
+
+*/
+
+body {
+
+font-family: 'Courier Prime', monospace;
+
+color: var(--text-color);
+
+background-color: var(--bg-color);
+
+padding: 0;
+
+line-height: 1.4;
+
+margin: 0;
+
+position: relative;
+
+}
+
+#wrapper {
+
+max-width: 800px;
+
+margin: 0 auto;
+
+padding: 40px;
+
+position: relative;
+
+}
+
+header {
+
+display: flex;
+
+justify-content: flex-end;
+
+align-items: center;
+
+position: absolute;
+
+top: 10px;
+
+right: 10px;
+
+z-index: 1;
+
+}
+
+/**
+
+* Section Styles
+
+* This section defines the styles for the main content sections of the website.
+
+*/
+
+.section {
+
+margin-bottom: 30px;
+
+}
+
+.section-header {
+
+font-weight: bold;
+
+border-bottom: 1px solid var(--section-header-border-color); /* Updated this line */
+
+padding-bottom: 5px;
+
+margin-bottom: 10px;
+
+}
+
+.comment {
+
+color: var(--comment-color);
+
+font-style: italic;
+
+}
+
+a {
+
+color: inherit;
+
+text-decoration: underline;
+
+}
+
+a:hover {
+
+color: var(--link-highlight-color);
+
+}
+
+/**
+
+* Details/Summary Styles
+
+* This section defines the styles for the expandable details/summary elements.
+
+*/
+
+details > *:not(summary):not(a){
+
+margin-left: 2em;
+
+}
+
+details > summary {
+
+list-style-type: none;
+
+position: relative;
+
+padding-left: 1em;
+
+cursor: pointer;
+
+}
+
+details > summary::-webkit-details-marker {
+
+display: none;
+
+}
+
+details > summary::before {
+
+content: "+ ";
+
+position: absolute;
+
+left: 0;
+
+}
+
+details[open] > summary::before {
+
+content: "- ";
+
+}
+
+/**
+
+* Dark Mode Toggle Styles
+
+* This section defines the styles for the dark mode toggle switch.
+
+*/
+
+.dark-mode-toggle-container {
+
+display: flex;
+
+align-items: center;
+
+}
+
+.dark-mode-toggle-label {
+
+margin-right: 10px;
+
+}
+
+.dark-mode-toggle {
+
+appearance: none;
+
+width: 60px;
+
+height: 34px;
+
+background-color: #1a1a1a;
+
+border-radius: 17px;
+
+position: relative;
+
+cursor: pointer;
+
+outline: none;
+
+}
+
+.dark-mode-toggle::before {
+
+content: "";
+
+position: absolute;
+
+width: 30px;
+
+height: 30px;
+
+background-color: #F5F5DC;
+
+border-radius: 50%;
+
+transition: 0.4s;
+
+top: 2px;
+
+left: 2px;
+
+}
+
+/* Checked state */
+
+.dark-mode-toggle:checked::before {
+
+transform: translateX(26px);
+
+background-color: #1a1a1a;
+
+}
+
+.dark-mode .dark-mode-toggle {
+
+background-color: #F5F5DC;
+
+}
