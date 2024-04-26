@@ -19,8 +19,8 @@
            <?php
            // Database connection details
            $servername = "localhost";
-           $username = "root";
-           $password = "H3rm!tsus";
+           $username = "midna";
+           $password = "VriskaDidNothingWrong";
            $database = "campus_management";
 
            // Create connection
